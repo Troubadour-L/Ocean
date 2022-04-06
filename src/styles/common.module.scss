@@ -1,0 +1,73 @@
+// TODO 定义全局样式变量
+
+// * 图片填充
+@mixin picture-fill {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+// * 横向flex布局
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+// * 纵向flex布局
+@mixin flex-row {
+    display: flex;
+    flex-direction: column;
+}
+
+// !文本
+// *文字利用伪元素垂直居中
+@mixin word-vertical-center {
+    &:after {
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+        height: 100%;
+    }
+}
+
+// !div块
+// *利用绝对定位水平垂直居中
+@mixin div-absoluate-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+@mixin div-absoluate-center-margin {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+// !毛玻璃特效 使用时要在伪元素后添加与父元素相同的背景图片
+@mixin frosted-glass {
+    &::after {
+        content: '';
+        height: 100%;
+        filter: blur(10px);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-position: bottom;    //!此处保证背景图片位置与父元素相同
+        background-attachment: fixed;   //!页面滚动图片位置不变
+        -webkit-filter: blur(10px);
+        z-index: 0;
+}
+}
+
+// * Header component
