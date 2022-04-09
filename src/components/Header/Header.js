@@ -11,8 +11,8 @@ const Header = forwardRef((params, headerRef) => {
                     <div className={style.charactor}>
                         <img title='个人信息' src={charactor} alt="" />
                     </div>
-                    <SettingOutlined title='设置' style={{ cursor: 'pointer' }} />
-                    <PoweroffOutlined title='退出登录' style={{ cursor: 'pointer' }} />
+                    <SettingOutlined title='设置' className={style.settingIcon} />
+                    <PoweroffOutlined title='退出登录' className={style.loginOutIcon} />
                 </div>
             </header>
         </div>

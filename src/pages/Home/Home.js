@@ -9,31 +9,30 @@ const Home = () => {
     const contentRef = useRef()
 
     useEffect(() => {
-        window.onload = () => {
-            const headerHeight = headerRef.current.clientHeight
-            contentRef.current.style.paddingTop = `${headerHeight + 10}px`
-        }
+        // window.onload = () => {
+        //     const headerHeight = headerRef.current.clientHeight
+        //     contentRef.current.style.paddingTop = `${headerHeight + 10}px`
+        // }
         debounce(window.onmousemove = (e) => {
             const mouseOffsetY = e.clientY
-            // debugger
             console.log(mouseOffsetY);
             if (mouseOffsetY < 50) {
                 headerRef.current.style.display = 'block'
             } else {
                 headerRef.current.style.display = 'none'
             }
-            const headerHeight = headerRef.current.clientHeight
-            contentRef.current.style.paddingTop = `${headerHeight + 10}px`
+            // const headerHeight = headerRef.current.clientHeight
+            // contentRef.current.style.paddingTop = `${headerHeight + 10}px`
         })
-        getHeader()
+        // getHeader()
     }, [])
 
-    const getHeader = () => {
-        window.onresize = () => {
-            const headerHeight = headerRef.current.clientHeight
-            contentRef.current.style.paddingTop = `${headerHeight + 10}px`
-        }
-    }
+    // const getHeader = () => {
+    //     window.onresize = () => {
+    //         const headerHeight = headerRef.current.clientHeight
+    //         contentRef.current.style.paddingTop = `${headerHeight + 10}px`
+    //     }
+    // }
 
     return (
         <>
