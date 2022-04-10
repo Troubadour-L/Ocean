@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext, createContext } from 'react';
 import Home from './pages/Home/Home';
 import styles from './App.module.scss';
 import Login from './pages/Login/Login';
 
+
+export const NumContext = createContext();
+
 function App() {
 
-  const [loginStatus, setLoginStates] = useState(0);
+  const [loginStatus, setLoginStates] = useState({ status: true });
 
   useEffect(() => {
     var starCount = 400;
@@ -78,10 +81,13 @@ function App() {
   return (
     <div className={styles.App} id='universe'>
       {
-        loginStatus === 1 ?
+        loginStatus.status === false ?
           <Home /> :
-          <Login />
+          <NumContext.Provider value={{ loginStatus, setLoginStates }}>
+            <Login />
+          </NumContext.Provider >
       }
+      {/* <Home /> */}
     </div>
   );
 }

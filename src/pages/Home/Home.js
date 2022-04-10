@@ -34,6 +34,8 @@ const Home = () => {
     //     }
     // }
 
+    debugger
+
     return (
         <>
             <Header ref={headerRef} />
