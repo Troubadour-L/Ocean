@@ -1,0 +1,58 @@
+@import '../../styles/common.module.scss';
+
+p {
+    color: #fff;
+    font-size: 50px;
+    font-family: Monospace;
+}
+
+input {
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mainLoginModal {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 756px;
+    height: 364px;
+    border-radius: 50px;
+    border-radius: 50px;
+    background: #acadd2;
+    box-shadow: 5px 5px 10px #8687a4,
+        -5px -5px 10px #d2d3ff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    @include div-absoluate-center;
+}
+
+.inputBox {
+    width: 60%;
+    height: 30px;
+    background: #acadd2;
+    box-shadow: inset 5px 5px 10px #8687a4, inset -5px -5px 10px #d2d3ff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 59%;
+    height: 100%;
+}

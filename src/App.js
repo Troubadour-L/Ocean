@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Home from './pages/Home/Home';
 import styles from './App.module.scss';
+import Login from './pages/Login/Login';
 
 function App() {
+
+  const [loginStatus, setLoginStates] = useState(0);
 
   useEffect(() => {
     var starCount = 400;
@@ -69,13 +72,16 @@ function App() {
         }
       );
     }
-
   }, [])
 
 
   return (
     <div className={styles.App} id='universe'>
-      <Home />
+      {
+        loginStatus === 1 ?
+          <Home /> :
+          <Login />
+      }
     </div>
   );
 }
